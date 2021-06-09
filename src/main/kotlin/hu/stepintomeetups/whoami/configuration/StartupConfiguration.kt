@@ -32,7 +32,7 @@ data class StartupConfiguration(
             getEnvOrThrow(INTRODUCTION_CHANNEL_IDENTIFIER_VARIABLE),
             getEnvOrThrow(GUILD_IDENTIFIER_VARIABLE),
             ensureGreaterThanZero(INTRODUCTION_RETENTION_SECONDS_VARIABLE, getEnvOrThrow(INTRODUCTION_RETENTION_SECONDS_VARIABLE))
-        )   
+        )
 
         private fun getEnvOrThrow(key: String) =
             System.getenv(key) ?: throw InvalidConfigurationException("The following environment variable is missing: $key")
