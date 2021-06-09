@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType
 import net.dv8tion.jda.api.interactions.commands.build.CommandData
 import org.slf4j.LoggerFactory
 
-class WhoisCommand(private val introductionChannelIdentifier: String, private val introductionSource: IntroductionSource) {
+class WhoisCommand(private val introductionSource: IntroductionSource) {
     companion object {
         @JvmStatic
         private val logger = LoggerFactory.getLogger(WhoisCommand::class.java)
@@ -38,7 +38,8 @@ class WhoisCommand(private val introductionChannelIdentifier: String, private va
         val introduction = introductionSource.provideIntroductionFor(
             IntroductionSource.SearchContext(
                 userIdentifier = targetUser,
-                channelIdentifier = introductionChannelIdentifier
+                // Bot checks if the event is from a guild, so this cast is safe.
+                guildIdentifier = event.guild?.id!!
             )
         )
 

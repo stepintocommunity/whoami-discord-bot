@@ -14,7 +14,6 @@ class Bot(private val configuration: StartupConfiguration, private val introduct
     }
 
     private val whoisCommand = WhoisCommand(
-        introductionChannelIdentifier = configuration.introductionChannelIdentifier,
         introductionSource = introductionSource,
     )
 
