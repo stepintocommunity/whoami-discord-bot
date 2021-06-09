@@ -124,7 +124,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>hu.stepintomeetups.whoami</mainClass>
+                            <mainClass>hu.stepintomeetups.whoami.ApplicationKt</mainClass>
                         </manifest>
                     </archive>
 
