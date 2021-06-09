@@ -1,7 +1,5 @@
 package hu.stepintomeetups.whoami.configuration
 
-import java.lang.NumberFormatException
-
 /**
  * Configuration loaded by the bot on startup.
  * @property botToken The token of the bot, assigned by Discord.
