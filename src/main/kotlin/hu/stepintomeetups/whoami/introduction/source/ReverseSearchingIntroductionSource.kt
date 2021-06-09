@@ -3,6 +3,13 @@ package hu.stepintomeetups.whoami.introduction.source
 import net.dv8tion.jda.api.JDA
 import org.slf4j.LoggerFactory
 
+/**
+ * Introduction search implemented as a reverse search (present to past) through the messages in a designated
+ * introduction channel.
+ * @param channelMapping Maps introduction channel identifiers to guild identifiers. Designates the introduction
+ *                       channel of a given guild.
+ * @param jda The JDA instance we can use for querying messages.
+ */
 class ReverseSearchingIntroductionSource(private val channelMapping: Map<String, String>, private val jda: JDA) : IntroductionSource {
     companion object {
         @JvmStatic

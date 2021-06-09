@@ -6,6 +6,9 @@ import net.dv8tion.jda.api.interactions.commands.OptionType
 import net.dv8tion.jda.api.interactions.commands.build.CommandData
 import org.slf4j.LoggerFactory
 
+/**
+ * Command handler class performing the logic of the `/whois` command.
+ */
 class WhoisCommand(private val introductionSource: IntroductionSource) {
     companion object {
         @JvmStatic
@@ -27,6 +30,10 @@ class WhoisCommand(private val introductionSource: IntroductionSource) {
         const val NO_INTRODUCTION_MESSAGE = "This user has not posted an introduction yet :("
     }
 
+    /**
+     * Handles a `/whois` command invocation.
+     * @param The event corresponding to the command invocation.
+     */
     fun handle(event: SlashCommandEvent) {
         logger.debug("Handling /whois command")
 
@@ -38,7 +45,7 @@ class WhoisCommand(private val introductionSource: IntroductionSource) {
         val introduction = introductionSource.provideIntroductionFor(
             IntroductionSource.SearchContext(
                 userIdentifier = targetUser,
-                // Bot checks if the event is from a guild, so this cast is safe.
+                // The Bot class checks if the event is from a guild, so this cast is safe.
                 guildIdentifier = event.guild?.id!!
             )
         )
