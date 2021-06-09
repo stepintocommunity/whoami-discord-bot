@@ -1,5 +1,8 @@
 package hu.stepintomeetups.whoami
 
+import hu.stepintomeetups.whoami.configuration.StartupConfiguration
+
 fun main(args: Array<String>) {
-    println("hai")
+    val a = StartupConfiguration.fromEnvironmentVariables()
+    print(a)
 }
