@@ -1,7 +1,10 @@
 package hu.stepintomeetups.whoami.introduction.source
 
-import java.util.Optional
-
 interface IntroductionSource {
-    fun provideIntroductionFor(userIdentifier: String): Optional<String>
+    fun provideIntroductionFor(context: SearchContext): String?
+
+    data class SearchContext(
+        val userIdentifier: String,
+        val channelIdentifier: String,
+    )
 }
