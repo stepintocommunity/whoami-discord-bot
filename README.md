@@ -47,7 +47,7 @@ $ java -jar ./target/whoami-discord-bot-1.0.0.jar
 
 ## Konfiguráció
 
-> [StartupConfiguration.kt](src/main/kotlin/hu/stepintomeetups/whoami/configuration/StartupConfiguration.kt9)
+> [StartupConfiguration.kt](src/main/kotlin/hu/stepintomeetups/whoami/configuration/StartupConfiguration.kt)
 
 Az alkalmazás az alábbi környezeti változókat várja:
 
